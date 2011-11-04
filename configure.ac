@@ -21,7 +21,7 @@ PKG_CHECK_MODULES(GOBJECT, [gobject-2.0 >= 2.27.0])
 PKG_CHECK_MODULES(NOTIFY, [libnotify])
 PKG_CHECK_MODULES(WEECHAT, [weechat])
 
-LT_INIT
+LT_INIT([dlopen])
 
 AC_CONFIG_FILES([
   Makefile

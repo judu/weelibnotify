@@ -1,17 +1,19 @@
 ACLOCAL_AMFLAGS = -I m4
 
 weechatplugindir = $(libdir)/weechat/plugins
-weechatplugin_LTLIBRARIES = libweelibnotify.la
+weechatplugin_LTLIBRARIES = weelibnotify.la
 
 
 
 AM_CFLAGS = \
 	   $(WEECHAT_CFLAGS)\
-	   $(NOTIFY_CFLAGS)
+	   $(NOTIFY_CFLAGS)\
+	   -fPIC 
 
 AM_LDFLAGS = \
 	     $(WEECHAT_LIBS)\
-	     $(NOTIFY_LIBS)
+	     $(NOTIFY_LIBS)\
+	     -fPIC -shared -avoid-version -module -export-dynamic
 
-libweelibnotify_la_SOURCES = \
+weelibnotify_la_SOURCES = \
 		      src/weelibnotify.c
