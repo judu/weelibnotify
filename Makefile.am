@@ -17,3 +17,7 @@ AM_LDFLAGS = \
 
 weelibnotify_la_SOURCES = \
 		      src/weelibnotify.c
+
+
+install-data-hook:
+	rm $(weechatplugindir)/weelibnotify.la
